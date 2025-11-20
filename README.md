@@ -72,7 +72,7 @@ This FastAPI application automatically detects acronyms in user queries and sele
 
 1. **Clone the repository** (if not already done):
    ```bash
-   cd /path/to/ai-search-retrieval-pipeline-poc-2
+   cd /path/to/acronyms_expansion_model
    ```
 
 2. **Install dependencies**:
