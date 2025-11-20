@@ -238,40 +238,6 @@ See [DATA.md](DATA.md) for detailed information about:
 - Dataset format
 - Training data specifications
 
-## Troubleshooting
-
-<<<<<<< HEAD
-### Common Issues
-1. **vLLM Server Not Running**: Ensure vLLM server is running on `localhost:8000`
-2. **Azure OpenAI Errors**: Check API credentials.
-3. **File Path Errors**: Update absolute paths in configuration files
-4. **Port Conflicts**: Change port in uvicorn command if 8090 is occupied
-=======
-### Port Already in Use
-```bash
-# Use different port
-uvicorn app.main:app --reload --port 8091
->>>>>>> 0f604d5 (refactored structure)
-
-# Kill existing process
-lsof -ti:8090 | xargs kill -9
-```
-
-### vLLM Connection Failed
-```bash
-# Test connection
-curl http://98.89.19.168:8000
-
-# Update URL in model clients if needed
-```
-
-### Module Import Errors
-```bash
-# Run from project root
-cd /path/to/ai-search-retrieval-pipeline-poc-2
-PYTHONPATH=. uvicorn app.main:app --reload --port 8090
-```
-
 ## Development
 
 ### Adding New Model
