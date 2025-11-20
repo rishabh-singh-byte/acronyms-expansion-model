@@ -21,7 +21,7 @@ This FastAPI application automatically detects acronyms in user queries and sele
 
 | Model | Description | Use Case |
 |-------|-------------|----------|
-| **Qwen Base** | Qwen3-4B-Instruct base model | General-purpose acronym expansion |
+| **Qwen Base** | Qwen3-4B-Instruct-FP8 base model | General-purpose acronym expansion |
 | **Qwen LoRA** | Qwen with fine-tuned QLora adapter | Domain-specific acronym understanding |
 | **Tiny Llama LoRA** | TinyLlama-1.1B with fine-tuned QLora adapter | Efficient inference with domain adaptation |
 | **OpenAI GPT** | Azure GPT-4o-mini | Baseline comparison and validation |
@@ -166,11 +166,11 @@ app/
 │   ├── app.py                # Single query UI
 │   ├── app1.py               # Evaluation UI
 │   └── app3.py               # Standalone UI
-└── evaluation_v1/             # Model evaluation scripts
-│   ├── call_llama.py                # Single query UI
-│   ├── gpt_llama_evaluation.py               # Evaluation UI
-│   └── gpt_qwen_evaluation.py               # Standalone UI
-│   └── gpt_base_inference.py               # Standalone UI
+├── evaluation_v1/             # Model evaluation scripts
+│   ├── call_llama.py                # calling llama(on 20k samples)
+│   ├── gpt_llama_evaluation.py      # Evaluation on llama output using gpt(judge)
+│   └── gpt_qwen_evaluation.py       # Evaluation on qwen output using gpt(judge)
+│   └── qwen_base_inference.py       # calling qwen base/lora on 20k samples
 |
 ```
 
